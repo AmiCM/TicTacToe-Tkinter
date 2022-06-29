@@ -26,7 +26,7 @@ class Cell:
 
     ##Comando al hacer click
     def change_state(self):
-        if self.state is None and self.check_win() is False:
+        if self.state is None:
             ## cambia texto del boton
             self.button.config(text=f'{Cell.state}')
             ## cambia el estado del boton
@@ -34,8 +34,7 @@ class Cell:
             ## cambia el turno de la clase
             self.change_turn()
             ## revisa si se ganó
-            if self.check_win():
-                self.turn_label.config(text=f'Game over, {self.state} won')
+            print(self.check_win())
 
     @classmethod
     def change_turn(cls):
